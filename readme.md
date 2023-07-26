@@ -4,10 +4,10 @@
 
 
 ## Documentation 📖
-* [About](#what-is-this-?)
-* [Installation](#how-to-use-?)
-* [Database Structure](#database-structure)
-* [API Structure](#api-structure)
+* [About](#what-is-this--)
+* [Installation](#how-to-use--)
+* [Database Structure](#database-structure-)
+* [API Structure](#api-structure-)
 
 ## What is this ? 👋
 
