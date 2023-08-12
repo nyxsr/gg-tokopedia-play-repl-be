@@ -21,7 +21,7 @@ app.use(express.json());
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5190",
+    origin: "https://gg-tokopedia-play-repl-fe.vercel.app",
     methods: ["GET", "POST"],
   },
 });
