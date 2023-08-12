@@ -1,14 +1,12 @@
+import videoCategoryModel from "../../models/videoCategory/index.mjs"
+import withError from "../../utils/response/withError.mjs"
+import withSuccess from "../../utils/response/withSuccess.mjs"
 
-import guestModel from "../../models/guest/index.mjs";
-import withError from "../../utils/response/withError.mjs";
-import withSuccess from "../../utils/response/withSuccess.mjs";
-import bcrypt from 'bcryptjs'
-
-export default class GuestController {
+export default class VideoCategoryController {
     async get(req,res){
         try {
-            const getdata = await guestModel.find()
-            withSuccess(res,200,'Data Guest ditemukan',getdata ?? [])
+            const getdata = await videoCategoryModel.find()
+            withSuccess(res,200,'Data Video Kategori ditemukan',getdata ?? [])
         } catch (error) {
             withError(res,500,error.message)
         }
@@ -17,23 +15,23 @@ export default class GuestController {
     async getOne(req,res){
         const {id} = req.params
         try {
-            const getdata = await guestModel.findOne({_id:id})
-            withSuccess(res,200,'Data Guest ditemukan',getdata ?? [])
+            const getdata = await videoCategoryModel.findOne({_id:id})
+            withSuccess(res,200,'Data Video Kategori ditemukan',getdata ?? [])
         } catch (error) {
             withError(res,500,error.message)
         }
     }
 
     async create(req,res){
-        const {username} = req.body
+        const {name} = req.body
 
         try {
 
-            const guest = new guestModel({
-                username:username,
+            const video = new videoCategoryModel({
+                name
             })
 
-            const save = await guest.save()
+            const save = await video.save()
 
             withSuccess(res,201,'Data berhasil dibuat',save)
         } catch (error) {
@@ -44,7 +42,7 @@ export default class GuestController {
     async update(req,res){
         const {id} = req.params
         try {
-            const doUpdate = await guestModel.updateOne({_id:id},{...req.body},{new:true})
+            const doUpdate = await videoCategoryModel.updateOne({_id:id},{...req.body},{new:true})
             withSuccess(res,201,'Data berhasil dirubah',doUpdate)
         } catch (error) {
             withError(res,500,error.message)
@@ -55,7 +53,7 @@ export default class GuestController {
         const {id} = req.params
 
         try {
-            const doDelete = await guestModel.deleteOne({_id:id})
+            const doDelete = await videoCategoryModel.deleteOne({_id:id})
             withSuccess(res,200,'Berhasil menghapus data',doDelete)
         } catch (error) {
             withError(res,500,error.message)

@@ -1,13 +1,12 @@
-import userModel from "../../models/user/index.mjs";
-import withError from "../../utils/response/withError.mjs";
-import withSuccess from "../../utils/response/withSuccess.mjs";
-import bcrypt from 'bcryptjs'
+import dealsCategoryModel from "../../models/dealsCategory/index.mjs"
+import withError from "../../utils/response/withError.mjs"
+import withSuccess from "../../utils/response/withSuccess.mjs"
 
-export default class UserController {
+export default class DealsCategoryController {
     async get(req,res){
         try {
-            const getdata = await userModel.find()
-            withSuccess(res,200,'Data User ditemukan',getdata ?? [])
+            const getdata = await dealsCategoryModel.find()
+            withSuccess(res,200,'Data Deals Kategori ditemukan',getdata ?? [])
         } catch (error) {
             withError(res,500,error.message)
         }
@@ -16,27 +15,24 @@ export default class UserController {
     async getOne(req,res){
         const {id} = req.params
         try {
-            const getdata = await userModel.findOne({_id:id})
-            withSuccess(res,200,'Data User ditemukan',getdata ?? [])
+            const getdata = await dealsCategoryModel.findOne({_id:id})
+            withSuccess(res,200,'Data Deals Kategori ditemukan',getdata ?? [])
         } catch (error) {
             withError(res,500,error.message)
         }
     }
 
     async create(req,res){
-        const {name,username,password,isOfficialStore} = req.body
+        const {name,kind} = req.body
 
         try {
-            const encrypted = await bcrypt.hash(password,10)
 
-            const user = new userModel({
+            const video = new dealsCategoryModel({
                 name,
-                username,
-                password:encrypted,
-                isOfficialStore
+                kind
             })
 
-            const save = await user.save()
+            const save = await video.save()
 
             withSuccess(res,201,'Data berhasil dibuat',save)
         } catch (error) {
@@ -47,7 +43,7 @@ export default class UserController {
     async update(req,res){
         const {id} = req.params
         try {
-            const doUpdate = await userModel.updateOne({_id:id},{...req.body},{new:true})
+            const doUpdate = await dealsCategoryModel.updateOne({_id:id},{...req.body},{new:true})
             withSuccess(res,201,'Data berhasil dirubah',doUpdate)
         } catch (error) {
             withError(res,500,error.message)
@@ -58,7 +54,7 @@ export default class UserController {
         const {id} = req.params
 
         try {
-            const doDelete = await userModel.deleteOne({_id:id})
+            const doDelete = await dealsCategoryModel.deleteOne({_id:id})
             withSuccess(res,200,'Berhasil menghapus data',doDelete)
         } catch (error) {
             withError(res,500,error.message)

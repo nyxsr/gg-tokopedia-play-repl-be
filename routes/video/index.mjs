@@ -7,9 +7,11 @@ const Router = express.Router()
 const Controller = new VideoController
 const Middleware = new AuthMiddleware
 
-Router.get('/',Middleware.loggedIn,Controller.get)
-Router.get('/:id',Middleware.loggedIn,Controller.getOne)
-Router.post('/',Middleware.loggedIn,Controller.create)
+Router.get('/',Controller.get)
+Router.get('/:id',Controller.getOne)
+Router.get('/comments/:id',Controller.getVideoComments)
+Router.post('/search',Controller.getManyByFilter)
+Router.post('/',Controller.create)
 Router.put('/:id',Middleware.loggedIn,Controller.update)
 Router.delete('/:id',Middleware.loggedIn,Controller.delete)
 

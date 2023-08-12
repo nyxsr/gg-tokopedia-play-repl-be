@@ -23,15 +23,16 @@ export default class ProductController {
     }
 
     async create(req,res){
-        const {title,url,price,createdBy} = req.body
+        const {title,url,price,createdBy,urlThumbnail} = req.body
 
         try {
 
             const product = new productModel({
-                title:title,
-                url:url,
-                price:price,
-                createdBy:createdBy
+                title,
+                url,
+                price,
+                createdBy,
+                urlThumbnail
             })
 
             const save = await product.save()
