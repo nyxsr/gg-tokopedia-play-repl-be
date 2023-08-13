@@ -32,7 +32,11 @@ $ git clone https://github.com/expressjs/expressjs.com.git
 $ npm install
 ```
 4. Set up your `.env` file , just duplicate the `.env.example` and rename into `.env`. Don't forget to fill out the `.env` with corrected data.
-5. Lastly, you need to run the server and **make sure** you are **connected to the internet**
+5. Don't forget to run the seeder to populate your database with our data
+```
+$ npm run seed
+```
+6. Lastly, you need to run the server and **make sure** you are **connected to the internet**
 ```
 $ npm run dev
 ```
