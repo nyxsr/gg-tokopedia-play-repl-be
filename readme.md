@@ -6,6 +6,7 @@
 ## Documentation 📖
 * [About](#what-is-this--)
 * [Installation](#how-to-use--)
+* [Features](#features-)
 * [Database Structure](#database-structure-)
 * [API Structure](#api-structure-)
 
@@ -38,6 +39,12 @@ $ npm run dev
 5. You can access the server now with terminal using _curl_, [Postman](https://postman.com), [Insomnia](https://insomnia.rest), etc
 
 Congratulations! 🎉🎉🎉
+
+## Features
+- Users can add videos into our app
+- Realtime Comment Chatbox powered by [Socket.IO](https://socket.io/)
+- Well-Structured Form of Response and Consistency
+- Easy to Maintain Project
 
 ## Database Structure 🦴
 
