@@ -4,7 +4,8 @@
   "description": "An App for Express Mid-Term GG",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.mjs"
+    "dev": "nodemon index.mjs",
+    "seed": "node seed/seeder.mjs"
   },
   "repository": {
     "type": "git",
