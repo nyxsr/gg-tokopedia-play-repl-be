@@ -1,4 +1,4 @@
-# GG3.0 Tokopedia Play Clone
+# GG3.0 Tokopedia Play Clone (Server)
 [![GitHub stars](https://img.shields.io/github/stars/nyxsr/gg-tokopedia-play-repl-be)](https://github.com/nyxsr/gg-tokopedia-play-repl-be/stargazers)
 
 
