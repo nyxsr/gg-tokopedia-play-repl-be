@@ -28,10 +28,7 @@ const io = new Server(server, {
 
 connector(process.env.MONGO_URL);
 
-app.use(cors({
-  origin: "https://gg-tokopedia-play-repl-fe.vercel.app",
-  methods: ["GET", "POST"],
-}));
+app.use(cors());
 
 app.use("/api/auth", AuthRouter);
 app.use("/api/users", UserRouter);
