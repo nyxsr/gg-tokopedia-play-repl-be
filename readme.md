@@ -336,7 +336,7 @@ Authorization : Bearer <your_secret_token>
 }
 ```
 
-### 3. Get all products
+### 4. Get all products
 **Endpoint** : `/products/`
 
 **Method** : `GET`
@@ -373,7 +373,7 @@ Authorization : Bearer <your_secret_token>
 }
 ```
 
-### 4. Get all videos
+### 5. Get all videos
 **Endpoint** : `/videos/`
 
 **Query** : `videoCategory=<videoCategory_Name>`
@@ -411,7 +411,7 @@ Authorization : Bearer <your_secret_token>
 }
 ```
 
-### 5. Get all comments
+### 6. Get all comments
 **Endpoint** : `/comments/`
 
 **Method** : `GET`
