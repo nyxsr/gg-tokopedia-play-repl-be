@@ -15,6 +15,7 @@
 This is a Backend for Tokopedia Play Replication and it's made with many tools, like :
 * [ExpressJS](https://expressjs.com/)
 * [Mongoose](https://mongoosejs.com/) (For MongoDB Connectors)
+* [Socket.IO](https://socket.io/) (For Realtime Communication with Frontend)
 * [JWT](https://github.com/auth0/node-jsonwebtoken)
 * and many more...
 
